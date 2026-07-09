@@ -1197,9 +1197,35 @@
                     Swal.fire({
                         icon: 'warning',
                         title: 'الطالب مسجل بالفعل',
-                        html: '<div class="text-right"><p>اسم الطالب ورقم الهاتف موجودين مسبقاً في هذا الشيت.</p><p class="mt-2 font-bold">لو عايز تغير المجموعة، ادخل على <strong>تعديل / إلغاء الحجز</strong> وغيّر المجموعة من هناك.</p></div>',
+                        html: `
+                            <div class="text-right" dir="rtl" style="font-family: 'Cairo', sans-serif;">
+                                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <div class="bg-amber-100 p-2 rounded-full">
+                                            <i class="fas fa-exclamation-triangle text-amber-600 text-lg"></i>
+                                        </div>
+                                        <span class="font-bold text-amber-800">تنبيه مهم</span>
+                                    </div>
+                                    <p class="text-gray-700 text-sm leading-relaxed">
+                                       اسم الطالب <strong class="text-primary">${name}</strong> ورقم الهاتف موجودين مسبقاً في هذا الشيت.
+                                    </p>
+                                </div>
+                                <div class="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <div class="bg-blue-100 p-2 rounded-full">
+                                            <i class="fas fa-lightbulb text-blue-600 text-lg"></i>
+                                        </div>
+                                        <span class="font-bold text-blue-800">الحل</span>
+                                    </div>
+                                    <p class="text-gray-700 text-sm leading-relaxed">
+                                        لو عايز تغير المجموعة، اضغط على <strong class="text-primary">"تعديل / إلغاء الحجز"</strong> وغيّر المجموعة من هناك.
+                                    </p>
+                                </div>
+                            </div>
+                        `,
                         confirmButtonColor: '#1e3a8a',
-                        confirmButtonText: 'حسناً'
+                        confirmButtonText: 'حسناً',
+                        customClass: { popup: 'swal2-popup-custom' }
                     });
                 } else {
                     Swal.fire({
